@@ -71,7 +71,7 @@
 		"inquirer": "^3.0.6",
 		"jest": "^23.6.0",
 		"postcss-loader": "^2.0.5",
-		"react": "^18.2.0",
+		"react": "^16.14.0",
 		"react-dom": "^16.14.0",
 		"react-test-renderer": "^16.6.3",
 		"sass": "^1.70.0",
