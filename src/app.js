@@ -8,7 +8,6 @@ import FileViewer from './components/file-viewer';
 import sampleHouse from '../example_files/SampleHouse.wexbim';
 import solarImage from '../example_files/02-USVI-Solar.jpg';
 import docx from '../example_files/SampleSpec.docx';
-import doc from '../example_files/sample.doc';
 import csv from '../example_files/Total_Crime.csv';
 import mp4 from '../example_files/small.mp4';
 import xlsx from '../example_files/SimpleSpreadsheet.xlsx';
@@ -23,47 +22,30 @@ import pdf from '../example_files/sample.pdf';
 const demoImages = [solarImage, photo360];
 
 const getNextDemoImage = (currentDemoImage) => {
-  const currentIndex = demoImages.indexOf(currentDemoImage);
-  const nextIndex = currentIndex + 1 >= demoImages.length ? 0 : currentIndex + 1;
-  return demoImages[nextIndex];
+	const currentIndex = demoImages.indexOf(currentDemoImage);
+	const nextIndex = currentIndex + 1 >= demoImages.length ? 0 : currentIndex + 1;
+	return demoImages[nextIndex];
 };
 
 const App = () => {
-  const [demoImage, setDemoImage] = useState(demoImages[0]);
+	const [demoImage, setDemoImage] = useState(demoImages[0]);
 
-  return (
-    <div>
-      <p>Scroll down for more demos.</p>
+	return (
+		<div>
+			<p>Scroll down for more demos.</p>
 
-      <div style={{
-        height: '100vh',
-        overflow: 'hidden',
-      }}>
-        <h2>xlsx demo</h2>
-        <FileViewer
-          fileType="xlsx"
-          filePath={xlsx}
-          onGridSort={() => null}
-        />
-      </div>
-
-      <div style={{
-        backgroundColor: 'white',
-        margin: 'auto',
-      }}>
-        <h2>image demo</h2>
-        <button onClick={() => setDemoImage(getNextDemoImage(demoImage))}>Swap image</button>
-        <FileViewer
-          fileType="jpeg"
-          filePath={demoImage}
-          onGridSort={() => null}
-        />
-      </div>
-    </div>
-  );
+			<div>
+				<FileViewer
+					fileType="docx"
+					filePath={docx}
+					onGridSort={() => null}
+				/>
+			</div>
+		</div>
+	);
 };
 
 ReactDOM.render(
-  <App />,
-  window.document.getElementById('app')
+	<App />,
+	window.document.getElementById('app')
 );
